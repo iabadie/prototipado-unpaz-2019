@@ -10,6 +10,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	rotation_degrees -= 4
-	position.x -= 10
+	rotation_degrees -= 5
+	position.x -= 12
 	pass
