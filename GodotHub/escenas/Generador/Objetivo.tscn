@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://escenas/Generador/Objetivo.gd" type="Script" id=2]
+
+[node name="Objetivo" type="Sprite"]
+modulate = Color( 0.462745, 0.968627, 0, 1 )
+scale = Vector2( 0.6875, 0.6875 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+

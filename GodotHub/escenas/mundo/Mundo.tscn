@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://escenas/mundo/Mundo.gd" type="Script" id=1]
+[ext_resource path="res://escenas/Generador/Generador.tscn" type="PackedScene" id=2]
+
+[node name="Mundo" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Generador" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1102.73, 153.432 )
+
