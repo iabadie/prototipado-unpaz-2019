@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Escenas/Personaje/Personaje.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Escenas/Mundo/monserrat_chico.tres" type="DynamicFont" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 37.3897, 36.8973 )
+
+[node name="Personaje" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="Colision" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.847059, 0.101961, 1, 1 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="ColisionDeArea" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[node name="Puntaje" type="Label" parent="."]
+margin_left = -37.9795
+margin_top = -62.959
+margin_right = 37.0205
+margin_bottom = -36.959
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_shadow = Color( 0.0705882, 0.482353, 0.356863, 1 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+text = "1 de 3"
+align = 1
+valign = 1
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

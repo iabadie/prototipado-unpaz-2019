@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Mundo.gd" type="Script" id=1]
+[ext_resource path="res://Jugador.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Item.tscn" type="PackedScene" id=3]
+
+[node name="Mundo" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Jugador" parent="." instance=ExtResource( 2 )]
+
+[node name="Item" parent="." instance=ExtResource( 3 )]
+position = Vector2( 102.556, 423.776 )
+
+[node name="Item2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 325.028, 413.663 )
+
+[node name="Item3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 447.522, 452.719 )
+
+[node name="Item7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 427.142, 311.692 )
+
+[node name="Item8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 588.18, 402.02 )
+
+[node name="Item4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 581.63, 268.298 )
+
+[node name="Item5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 628.4, 112.82 )
+
+[node name="Item6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 837.87, 233.658 )
+
