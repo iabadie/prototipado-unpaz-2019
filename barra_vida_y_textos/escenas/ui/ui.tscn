@@ -1,0 +1,85 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://escenas/ui/ui.gd" type="Script" id=1]
+[ext_resource path="res://assets/sword_normal.png" type="Texture" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_color = Color( 1, 0.0745098, 0.0745098, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Gradient" id=2]
+colors = PoolColorArray( 0.827451, 0.133333, 0.133333, 1, 0.992157, 0.666667, 0.156863, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0.287649, 1 ), 0.0, -0.665513, 0, 0, Vector2( 1, 0.0179231 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=6]
+emission_shape = 2
+emission_box_extents = Vector3( 20, 1, 1 )
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, -40, 0 )
+initial_velocity = 15.0
+angular_velocity = 367.58
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 2.0
+scale_random = 1.0
+scale_curve = SubResource( 5 )
+color_ramp = SubResource( 3 )
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="BarraDeVida" type="Sprite" parent="."]
+position = Vector2( 199.797, 190.357 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+
+[node name="ProgressBar" type="ProgressBar" parent="BarraDeVida"]
+margin_left = -18.0
+margin_top = -7.0
+margin_right = 34.0
+margin_bottom = 7.0
+custom_styles/bg = SubResource( 1 )
+value = 100.0
+percent_visible = false
+
+[node name="Particles2D" type="Particles2D" parent="BarraDeVida"]
+position = Vector2( 10.8656, -0.727608 )
+z_index = -5
+amount = 25
+process_material = SubResource( 6 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 43.3189
+margin_top = 143.453
+margin_right = 83.3189
+margin_bottom = 157.453
+rect_scale = Vector2( 1.5, 1.5 )
+text = "Vida"
+
+[node name="Vida" type="Label" parent="."]
+margin_left = 284.411
+margin_top = 328.968
+margin_right = 343.411
+margin_bottom = 359.968
+rect_scale = Vector2( 2, 2 )
+text = "
+"
+
+[node name="SimulaEvento" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="SimulaEvento" to="." method="_on_SimulaEvento_timeout"]
