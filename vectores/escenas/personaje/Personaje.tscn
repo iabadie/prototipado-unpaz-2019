@@ -1,16 +1,13 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Player.gd" type="Script" id=1]
+[ext_resource path="res://escenas/personaje/Personaje.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 30.8034, 30.9418 )
+[sub_resource type="CircleShape2D" id=1]
+radius = 61.1689
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Personaje" type="KinematicBody2D"]
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
