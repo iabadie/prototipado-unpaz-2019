@@ -20,9 +20,14 @@ func _physics_process(delta):
 	# Detectar cuando esta en el piso y reduce la velocidad por la gravedad, a cero
 	if is_on_floor():
 		velocity.y = 0
+	
+	# Si se presiona la tecla arriba Y ESTA EN EL PISO
+	# Entonces permite saltar
 	if Input.is_action_just_pressed("ui_up") and is_on_floor():
 		velocity.y -= 800 # aplico salto
 		
+	# Al utilizar el vector normal en move and slide, godot detecta
+	# Automaticamente cuando el jguador está "En el piso"
 	move_and_slide(velocity, vector_normal)
 	pass
 	
